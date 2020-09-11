@@ -1,0 +1,45 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation gradleApi();
+//    引入 安卓 插件
+//    implementation "com.android.tools.build:gradle:4.0.1"
+//    implementation "com.android.tools.build:gradle:4.0.1"
+       implementation "com.android.tools.build:gradle:4.0.1"
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+apply plugin: 'maven-publish'
+publishing {
+//     Publication
+
+    publications {
+        JiaguPlugin(MavenPublication) {
+            from components.java
+            groupId "com.lww"
+            artifactId "dingding"
+            version "1.0.0"
+
+        }
+    }
+
+    repositories {
+        maven {
+            //指定要上传的maven私服仓库
+            url="../repo"
+            /*  url = "http://jenkins.maxrocky.com:8080/maven/content/repositories/thirdparty/"
+              //认证用户和密码
+              credentials {
+                  username 'admin'
+                  password 'maxrocky5721'
+              }*/
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Dingding" target="1.7" />
+      <module name="DingDing" target="1.7" />
+      <module name="DingdingPlugin.plugins-Dingding" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
