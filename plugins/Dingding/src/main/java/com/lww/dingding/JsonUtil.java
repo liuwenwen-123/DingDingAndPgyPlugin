@@ -5,6 +5,7 @@ package com.lww.dingding;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.apache.http.util.TextUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -104,7 +105,7 @@ public class JsonUtil {
 	 * @param key
 	 * @return
 	 */
-	/*public static String getFieldValue(String json, String key) {
+	public static String getFieldValue(String json, String key) {
 		if (TextUtils.isEmpty(json))
 			return null;
 		if (!json.contains(key))
@@ -116,10 +117,10 @@ public class JsonUtil {
 
 			value = jsonObject.getString(key);
 		} catch (JSONException e) {
-			LogUtil.error("eeeeaa  "+e.getMessage());
+			System.out.println("eeeeaa  "+e.getMessage());
 			e.printStackTrace();
 		}
 		return value;
-	}*/
+	}
 
 }
