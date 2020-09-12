@@ -56,25 +56,20 @@ public class DingDingSendMsgTask extends DefaultTask {
         Long timestamp = System.currentTimeMillis();
         String stringToSign = timestamp + "\n" + secret;
 
-        System.out.println("22222222222");
 
         String   url = "https://oapi.dingtalk.com/robot/send?access_token=" +token+ "&timestamp="
                 + timestamp + "&sign=" + getSign(stringToSign, secret);
 
 
-//a71d894cf1571c514853b399b3c148f309fc25e8eb416fc6367d15f4782e6537
 
-        System.out.println("2226666 "  + mUploadResponseInfo);
         PGYResonse  pgyResonse =JsonUtil.parseJsonToBean(mUploadResponseInfo,PGYResonse.class);
         String buildShortcutUrl = pgyResonse.getData().getBuildShortcutUrl();
-        System.out.println("22222222222"  +  buildShortcutUrl);
 
         DingDingEntity.LinkBean linkBean = new DingDingEntity.LinkBean();
         linkBean.setText(mInfo.getContent());
         linkBean.setTitle(mInfo.getTitle());
         linkBean.setPicUrl("");
 //        linkBean.setMessageUrl(JsonUtil.getFieldValue(mUploadResponseInfo,"buildShortcutUrl"));
-        https://oss.pgyer.com/513adf114c852d3b48bb74af17ff8668.apk?auth_key=1599899285-e32f78d9c411d6a81c4443fb080123b0-0-7d4189eaf60ee7c62595a3e3680ffb5f&response-content-disposition=attachment%3B+filename%3D1.apk
 //        linkBean.setMessageUrl("https://www.pgyer.com/WsRT");
         linkBean.setMessageUrl("https://www.pgyer.com/"+pgyResonse.getData().getBuildShortcutUrl());
         linkBean.setMessageUrl( pgyResonse.getData().getBuildQRCodeURL());

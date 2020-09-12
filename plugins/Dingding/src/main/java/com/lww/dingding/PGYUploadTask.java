@@ -35,7 +35,6 @@ public class PGYUploadTask extends DefaultTask {
         Map<String, String> params=new HashMap<>();
         params.put("_api_key",mInfo.get_api_key());
         File file = new File(mInfo.getFilePaht());
-//       System.out.println("1111111111" + mInfo.getFilePaht());
         String  uploadinfo = uploadFile("https://www.pgyer.com/apiv2/app/upload", params,file
                 );
         System.out.println("uploadinfo  "+uploadinfo);

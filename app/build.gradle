@@ -3,14 +3,14 @@ apply plugin: 'com.android.application'
 apply plugin: "com.lww.dingding"
 dingdingText1{
     msgtype  'link'
-    secret 'SEC8b9383d4d8e24641d5b4121933c88d5fd42dce88393a3379a0d93dbabffb98e6'
+    secret 'xxx'
     content ' 第2次次发布了'
     title '第2次发布'
-    token 'a71d894cf1571c514853b399b3c148f309fc25e8eb416fc6367d15f4782e6537'
+    token 'xxx'
 }
 
 pgy{
-    _api_key  '7936ccab122753254294d9d6b181e987'
+    _api_key  'xxx'
     filePaht  file('../1.apk').absolutePath
 }
 
